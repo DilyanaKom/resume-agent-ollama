@@ -161,39 +161,30 @@
     transform: translateY(0);
   }
   
-  .result-container {
+  .result-section {
     display: none;
+    margin-top: 2rem;
+    border: none;
+    padding: 0;
   }
   
-  .result-card {
+  .result-section legend {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    background-color: var(--success);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+  }
+  
+  #resultContainer {
     background: white;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 2rem;
     margin-top: 2rem;
-  }
-  
-  .result-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .result-title {
-    font-size: 1.5rem;
-    margin-left: 1rem;
-  }
-  
-  .result-icon {
-    background-color: var(--success);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
   }
   
   .result-content {
