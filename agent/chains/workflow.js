@@ -13,19 +13,8 @@ const workflowChain = RunnableSequence.from([
       (input) => ({ job_posting: input.job_posting }),
       summarizeJobChain,
     ]),
-    original_inputs: new RunnablePassthrough(),
   },
-  {
-    final_analysis: RunnableSequence.from([
-      (input) => ({
-        extracted_skills: input.extracted_skills,
-        job_summary: input.job_summary,
-      }),
-      compareAndSuggestChain,
-    ]),
-    extracted_skills: (input) => input.extracted_skills,
-    job_summary: (input) => input.job_summary,
-  },
+  compareAndSuggestChain,
 ]);
 
 export default workflowChain;
