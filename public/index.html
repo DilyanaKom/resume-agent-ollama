@@ -15,12 +15,12 @@
   </header>
   
   <div class="container">
-    <form id="resumeForm" enctype="multipart/form-data" class="card" method="POST">
+    <form id="resumeForm" enctype="multipart/form-data" class="card" method="POST" action="analyze">
       <div class="form-group">
         <label for="resumeFile">Upload Your Resume</label>
         <div class="file-input-container" id="fileDropArea">
           <div class="file-icon">📄</div>
-          <div class="file-label">Drag & drop your resume or click to browse</div>
+          <div class="file-label">Click to browse</div>
           <div class="file-hint">Accepts PDF files only</div>
           <div class="file-name" id="fileName"></div>
           <input type="file" id="resumeFile" name="resume" accept=".pdf" required>
@@ -29,7 +29,7 @@
       
       <div class="form-group">
         <label for="jobDescription">Paste Job Description</label>
-        <textarea id="jobDescription" name="job" placeholder="Copy and paste the job description here..." required></textarea>
+        <input type="text" id="jobDescription" name="job" placeholder="Copy and paste the job description here..." required>
       </div>
       
       <button type="submit">Analyze Resume</button>
@@ -43,6 +43,6 @@
     </form>
   </div>
   
-  <script src="index.js"></script>
+  <!-- <script src="index.js"></script> -->
 </body>
 </html>
