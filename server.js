@@ -23,14 +23,13 @@ app.post('/analyze', upload.single('resume'), async (req, res) => {
 
     console.log('Extracted text:', resumeText);
 
-    // Do something with resumeText here
-    res.send('PDF received and text processed');
+    res.send(resumeText);
   } catch (err) {
     console.error('PDF Parsing Error:', err);
     res.status(500).send('Error parsing PDF');
   } finally {
     try {
-      await unlink(req.file.path); // Clean up the file
+      await unlink(req.file.path);
     } catch (cleanupErr) {
       console.error('Error deleting uploaded file:', cleanupErr);
     }
