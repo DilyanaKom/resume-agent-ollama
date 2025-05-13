@@ -5,6 +5,7 @@ import { dirname } from 'path';
 import multer from 'multer';
 import { readFile, unlink } from 'fs/promises';
 import PdfParse from 'pdf-parse';
+import { analyzeResumeText } from './agent/analyzer.js';
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
@@ -22,10 +23,10 @@ app.post('/analyze', upload.single('resume'), async (req, res) => {
     const resumeText = data.text;
     const jobDescription = req.body.job;
 
-    console.log('Extracted text:', resumeText);
-    console.log(req.body.job);
+    const result = await analyzeResumeText(resumeText, jobDescription);
+    console.log('Analysis Result:', result);
 
-    res.send(resumeText);
+    res.send(result);
   } catch (err) {
     console.error('PDF Parsing Error:', err);
     res.status(500).send('Error parsing PDF');
