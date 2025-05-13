@@ -20,8 +20,10 @@ app.post('/analyze', upload.single('resume'), async (req, res) => {
     const resumeBuffer = await readFile(req.file.path);
     const data = await PdfParse(resumeBuffer);
     const resumeText = data.text;
+    const jobDescription = req.body.job;
 
     console.log('Extracted text:', resumeText);
+    console.log(req.body.job);
 
     res.send(resumeText);
   } catch (err) {
