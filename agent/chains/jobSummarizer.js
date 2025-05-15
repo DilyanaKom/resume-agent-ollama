@@ -16,6 +16,7 @@ Extract the following information from this job posting WITHOUT making any assum
 8. Soft Skills: Communication, teamwork, or other soft skills mentioned
 9. Company Benefits: Compensation, perks, or benefits mentioned
 10. Location/Remote Policy: Office location or remote work options
+11. Extract important keywords and industry terminology used in the job posting
 
 ---
 {job_posting}`);
